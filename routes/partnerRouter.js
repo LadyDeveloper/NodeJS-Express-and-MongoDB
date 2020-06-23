@@ -18,7 +18,7 @@ partnerRouter.route('/')
             res.json(partners);
         })
         .catch(err => next(err));
-        })
+    })
     .post(cors.corsWithOptions, authenticate.verifyUser, authenticate.verifyAdmin, (req, res, next) => {
         Partner.create(req.body)
         .then(partner => {
